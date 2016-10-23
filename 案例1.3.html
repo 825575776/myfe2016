@@ -14,14 +14,38 @@
         a{
             text-decoration:none;
         }
-
+        #menu .main-menu{
+            width: 120px;
+            height: 30px;
+            background: #cccccc;
+            float: left;
+            margin-right: 5px;
+        }
+        menu .main-menu a{
+            width:120px;
+            height: 30px;
+            display:block;
+            line-height: 30px;
+            text-align:center;
+            color: #f00;
+        }
+        #menu .sub-menu{
+            background: #dddddd;
+           /* display:none;*/
+        }
+        #menu .main-menu li{
+            border-bottom:1xp dashed #000;
+        }
+        #meun .sub-menu a:hover{
+            background: #eeeeee;
+        }
     </style>
 </head>
 <body>
     <ul id="menu">
         <li class="main-menu">
             <a href="#">link1</a>
-            <ul>
+            <ul class="sub-menu">
                 <li><a href="#">submenu1</a></li>
                 <li><a href="#">submenu2</a></li>
                 <li><a href="#">submenu3</a></li>
@@ -29,7 +53,7 @@
         </li>
         <li class="main-menu">
             <a href="#">link2</a>
-            <ul>
+            <ul class="sub-menu">
                 <li><a href="#">submenu1</a></li>
                 <li><a href="#">submenu2</a></li>
                 <li><a href="#">submenu3</a></li>
@@ -37,12 +61,21 @@
         </li>
         <li class="main-menu">
             <a href="#">link3</a>
-            <ul>
+            <ul class="sub-menu">
                 <li><a href="#">submenu1</a></li>
                 <li><a href="#">submenu2</a></li>
                 <li><a href="#">submenu3</a></li>
             </ul>
         </li>
     </ul>
+
+    <script>
+        var oMenu =document.getElementById("menu");
+        var ali=oMenu.getElementByTagName("li");
+//        var ali2=document.getElementByClassName("main-menu")/*不支持早期IE
+        for(var i=0;i<aLi.length; i++){
+            if(aLi)
+        }
+    </script>
 </body>
 </html>

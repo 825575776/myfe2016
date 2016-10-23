@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>1.4</title>
+    <title>折叠菜单</title>
     <style>
-    *{
-    margin: 0;
-    padding: 0;
-    }
-    ul{
-    list-style: none;
-    }
-    a{
-    text-decoration: none;
-    }
-    #menu h3{
-    width: 200px;
-    height: 30px;
-    background: #000000;
-    color: #fff;
-    line-height: 30px;
-    cursor: pointer;
-    }
-    #menu li{
-    width: 200px;
-    }
-    #menu .sub-menu{
-    border: 1px solid #000;
-    display: none;
-    }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu h3{
+            width: 200px;
+            height: 30px;
+            background: #000000;
+            color: #fff;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #menu li{
+            width: 200px;
+        }
+        #menu .sub-menu{
+            border: 1px solid #000;
+            display: none;
+        }
     </style>
+
 </head>
 <body>
 <ul id="menu">
@@ -51,29 +52,28 @@
     </li>
 </ul>
 
-
-<script>
-    var oMenu = document.getElementById("menu");
-    var aH3 = oMenu.getElementsByTagName("h3");
-    var aSubMenu = oMenu.getElementsByTagName("ul");
-    for(var i=0; i<aH3.length; i++){
-        aH3[i].bFlag=false;
-        aH3[i].onclick=function(){
-            var oUl=next(this);
-            if(this.bFlag==false){
-               oUl.style.display='block';
-            }else{
-               oUl.style.display='none';
+    <script>
+        var oMenu = document.getElementById("menu");
+        var aH3 = oMenu.getElementsByTagName("h3");
+        var aSubMenu = oMenu.getElementsByTagName("ul");
+        for(var i=0; i<aH3.length; i++){
+            aH3[i].bFlag=false;
+            aH3[i].onclick=function(){
+                var oUl=next(this);
+                if(this.bFlag==false){
+                   oUl.style.display='block';
+                }else{
+                   oUl.style.display='none';
+                }
+                this.bFlag = !this.bFlag;
             }
-            this.bFlag = !this.bFlag;
         }
-    }
-        function next(ele){
-            do{
-                ele = ele.nextSibling;
-            }while(ele && ele.noneType !==1);
-            return ele;
-    }
-</script>
+            function next(ele){
+                do{
+                    ele = ele.nextSibling;
+                }while(ele && ele.noneType !==1);
+                return ele;
+        }
+    </script>
 </body>
 </html>
